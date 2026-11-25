@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Backoffice</title>
+  <link rel="stylesheet" href="css/style.css?v=5">
+</head>
+<body class="oculto">
+
+  <header class="header">
+    <strong class="logo">Backoffice</strong>
+    <div class="usuario">
+      <span id="nombreUsuario"></span>
+      <button id="btnSalir" class="btn btn-blanco">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <main class="contenido">
+
+    <section class="banner">
+      <div>
+        <h2 id="saludo">Mis proyectos</h2>
+        <p>Proyectos guardados: <span id="total">0</span></p>
+      </div>
+      <button id="btnAgregar" class="btn btn-blanco">Agregar proyecto</button>
+    </section>
+
+    <div class="barra">
+      <input type="search" id="buscador" placeholder="Buscar por nombre o tecnología">
+    </div>
+
+    <section id="lista" class="proyectos"></section>
+
+    <div id="vacio" class="vacio" hidden>
+      <p>No hay proyectos todavía.</p>
+    </div>
+
+  </main>
+
+  <div id="modal" class="modal">
+    <div class="modal-caja">
+      <h3 id="modalTitulo">Nuevo proyecto</h3>
+
+      <form id="formProyecto">
+        <div class="campo">
+          <label for="titulo">Título</label>
+          <input type="text" id="titulo" name="titulo" required>
+        </div>
+
+        <div class="campo">
+          <label for="descripcion">Descripción</label>
+          <textarea id="descripcion" name="descripcion" rows="3" required></textarea>
+        </div>
+
+        <div class="campo">
+          <label for="tecnologias">Tecnologías (separadas por coma)</label>
+          <input type="text" id="tecnologias" name="tecnologias" placeholder="HTML, CSS, JavaScript">
+        </div>
+
+        <div class="campo">
+          <label for="repositorio">Repositorio (opcional)</label>
+          <input type="url" id="repositorio" name="repositorio" placeholder="https://github.com/...">
+        </div>
+
+        <div class="campo">
+          <label for="imagenes">Imágenes (links separados por coma)</label>
+          <input type="text" id="imagenes" name="imagenes">
+        </div>
+
+        <div class="modal-botones">
+          <button type="button" id="btnCancelar" class="btn btn-borde">Cancelar</button>
+          <button type="submit" id="guardar" class="btn btn-morado">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="aviso" class="aviso"></div>
+
+  <script src="js/api.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>
