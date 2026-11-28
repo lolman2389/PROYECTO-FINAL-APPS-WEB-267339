@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro - Backoffice</title>
+  <link rel="stylesheet" href="css/style.css?v=5">
+</head>
+<body>
+  <main class="auth">
+    <section class="card">
+      <h1>Crear cuenta</h1>
+      <p class="subtitle">Llena tus datos para registrarte</p>
+
+      <p id="mensaje" class="mensaje"></p>
+
+      <form id="formRegister">
+        <div class="campo">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" minlength="6" required>
+        </div>
+
+        <div class="campo">
+          <label for="correo">Correo</label>
+          <input type="email" id="correo" name="correo" required>
+        </div>
+
+        <div class="campo">
+          <label for="itsonId">ID ITSON (6 números)</label>
+          <input type="text" id="itsonId" name="itsonId" pattern="[0-9]{6}" maxlength="6" inputmode="numeric" required>
+        </div>
+
+        <div class="campo">
+          <label for="clave">Contraseña (mínimo 6 caracteres)</label>
+          <input type="password" id="clave" name="clave" minlength="6" required>
+        </div>
+
+        <button type="submit" class="boton">Crear cuenta</button>
+      </form>
+
+      <p class="enlace">¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/register.js"></script>
+</body>
+</html>
